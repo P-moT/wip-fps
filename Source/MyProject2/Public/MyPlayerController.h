@@ -3,15 +3,27 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Camera/PlayerCameraManager.h"
+#include "GameFramework/PlayerController.h"
 #include "MyPlayerController.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class MYPROJECT2_API AMyPlayerController : public APlayerCameraManager
+class MYPROJECT2_API AMyPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
+
+public:
+
+	AMyPlayerController();
+
+	virtual void BeginPlay() override;
+
+	virtual void SetupInputComponent() override;
+
+	virtual void Tick(float DeltaTime) override;
+
+
+
 };
